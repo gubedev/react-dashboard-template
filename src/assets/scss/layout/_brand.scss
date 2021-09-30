@@ -1,0 +1,16 @@
+.brand {
+  line-height: 34px;
+  height: 34px;
+  width: 44px;
+  background-color: $brand-bg;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-stretch: ultra-expanded;
+  color: #fff;
+}
+.app-version {
+  padding: 0.25em 1em;
+  color: var(--app-name-color);
+}

@@ -1,0 +1,39 @@
+$header-mobile-height: 50px;
+$header-height: 60px;
+$subheader-height: 50px;
+$aside-left-width: 260px;
+$aside-left-pinned-width: 70px;
+$footer-height: 60px;
+$media-breakpoint-md: 800px;
+$media-breakpoint-lg: 1200px;
+$media-breakpoint-md: 800px;
+$media-breakpoint-lg: 1200px;
+$brand-bg: #007bff;
+
+html[data-theme="light"] {
+  /* global colors */
+  --header-bg: #fff;
+  --page-bg: #fff;
+  --app-name-color: #222b45;
+  --footer-bg: #fff;
+  --border: 1px solid #e2e8f0;
+  --aside-left-bg: #fff;
+  --aside-left-menu-section-color: #3366ff;
+  --aside-left-menu-color: #222b45;
+  --aside-left-svg-color: #8f9bb3;
+  --aside-left-border-right: 1px solid #e2e8f0;
+}
+
+html[data-theme="blue"] {
+  /* global colors */
+  --header-bg: #fff;
+  --page-bg: #fff;
+  --app-name-color: #fff;
+  --footer-bg: #fff;
+  --border: 1px solid #e2e8f0;
+  --aside-left-bg: #1b2642;
+  --aside-left-menu-section-color: #fff;
+  --aside-left-menu-color: #fff;
+  --aside-left-svg-color: #92a2c8;
+  --aside-left-border-right: 1px solid #1b2642;
+}

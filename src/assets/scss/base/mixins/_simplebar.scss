@@ -1,0 +1,25 @@
+@mixin simplebar-ver-size($size) {
+  .simplebar-track.simplebar-vertical {
+    top: 0;
+    width: $size;
+  }
+  .simplebar-track.simplebar-horizontal {
+    display: none;
+  }
+  .simplebar-content {
+    overflow-x: hidden;
+  }
+}
+
+@mixin simplebar-skin() {
+  .simplebar-scrollbar:before {
+    position: absolute;
+    content: "";
+    background: var(--aside-left-bg);
+    border-radius: 7px;
+    left: 2px;
+    right: 2px;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+  }
+}

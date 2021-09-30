@@ -1,0 +1,129 @@
+.wrapper {
+  display: flex;
+
+  .aside-left {
+    display: none;
+  }
+
+  .aside-left-overlay {
+    display: none;
+  }
+
+  .pages-wrapper {
+    flex: 1;
+    .header {
+      display: none;
+      z-index: 10;
+    }
+    .header-mobile {
+      display: block;
+      position: fixed;
+      width: 100%;
+      height: $header-mobile-height;
+      z-index: 10;
+    }
+    .subheader {
+      position: fixed;
+      top: $header-mobile-height;
+      width: 100%;
+      height: $subheader-height;
+      z-index: 10;
+    }
+    .pages-content {
+      min-height: 100vh;
+      overflow-y: auto;
+      margin-top: calc(#{$header-mobile-height} + #{$subheader-height});
+    }
+    .footer {
+      height: $footer-height;
+    }
+    @include desktop {
+      .header {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: $header-height;
+      }
+      .header-mobile {
+        display: none;
+      }
+      .subheader {
+        top: $header-height;
+      }
+      .pages-content {
+        margin-top: calc(#{$header-height} + #{$subheader-height});
+      }
+    }
+  }
+
+  &.aside-left--expanded {
+    @include desktop {
+      .aside-left {
+        display: block;
+        min-width: $aside-left-width;
+        max-width: $aside-left-width;
+        .aside-left__wrapper {
+          position: fixed;
+          min-width: $aside-left-width;
+          max-width: $aside-left-width;
+          height: 100%;
+        }
+      }
+      .pages-wrapper {
+        width: calc(100vw - #{$aside-left-width});
+        .header,
+        .subheader {
+          width: calc(100vw - #{$aside-left-width});
+        }
+      }
+    }
+  }
+
+  &.aside-left--pinned {
+    @include desktop {
+      .aside-left {
+        display: block;
+        min-width: $aside-left-pinned-width;
+        max-width: $aside-left-pinned-width;
+        .aside-left__wrapper {
+          position: fixed;
+          min-width: $aside-left-pinned-width;
+          max-width: $aside-left-pinned-width;
+          height: 100%;
+        }
+      }
+      .pages-wrapper {
+        width: calc(100vw - #{$aside-left-pinned-width});
+        .header,
+        .subheader {
+          width: calc(100vw - #{$aside-left-pinned-width});
+        }
+      }
+    }
+  }
+
+  &.aside-left--offcanvas {
+    .aside-left-overlay {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    .aside-left {
+      position: fixed;
+      display: block;
+      left: 0;
+      top: 0;
+      width: $aside-left-width;
+      height: 100%;
+      z-index: 4000;
+      .aside-left__wrapper {
+        z-index: 4000;
+        height: 100%;
+      }
+    }
+  }
+}

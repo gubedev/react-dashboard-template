@@ -1,0 +1,120 @@
+.wrapper {
+  .aside-left {
+    background-color: var(--aside-left-bg);
+    border-right: var(--aside-left-border-right);
+    .aside-left__wrapper {
+      padding: 1em;
+      .aside-left__header {
+        display: none;
+      }
+      .aside-left__menu {
+        padding-top: 1em;
+      }
+      .menu__section {
+        padding: 2em 0;
+        color: var(--aside-left-menu-section-color);
+        h4 {
+          color: inherit;
+          font-size: 12px;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+      }
+      .menu__item {
+        padding: 12px 0;
+        .menu__link {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: var(--aside-left-menu-color);
+        }
+        .arrow-collapse {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+    }
+    .svg-icon-16 {
+      width: 16px;
+      height: 16px;
+      fill: var(--aside-left-svg-color);
+    }
+    .svg-icon-18 {
+      width: 18px;
+      height: 18px;
+      fill: var(--aside-left-svg-color);
+    }
+    @include desktop {
+      .aside-left__wrapper {
+        padding: 1em 2em;
+        .aside-left__header {
+          display: flex;
+          justify-content: space-between;
+          .aside-left__toggle {
+            cursor: pointer;
+            margin-top: 0.25em;
+          }
+        }
+        .aside-left__brand {
+          display: flex;
+          justify-content: space-between;
+          .subtitle {
+            padding-top: 0.3em;
+          }
+        }
+      }
+    }
+  }
+  &.aside-left--pinned {
+    @include desktop {
+      .aside-left {
+        .aside-left__wrapper {
+          padding-left: 0;
+          padding-right: 0;
+          .aside-left__header {
+            display: flex;
+            justify-content: center;
+          }
+          .aside-left__brand {
+            display: none;
+          }
+          .menu__section {
+            color: transparent;
+          }
+          .menu__item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            .menu__link__span {
+              display: none;
+            }
+            .arrow-collapse {
+              display: none;
+            }
+            &:hover {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.aside-left--offcanvas {
+    .aside-left {
+      .aside-left__wrapper {
+        .aside-left__header {
+          display: none;
+        }
+      }
+    }
+    .aside-left-overlay {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@include simplebar-skin();
+@include simplebar-ver-size(8px);

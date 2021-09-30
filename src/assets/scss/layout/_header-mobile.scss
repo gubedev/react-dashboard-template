@@ -1,0 +1,25 @@
+.header-mobile {
+  border-bottom: var(--border);
+  background-color: var(--header-bg);
+  padding: 0.5em 1em;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header-mobile__toggle {
+      cursor: pointer;
+      .svg-icon {
+        width: 16px;
+        height: 16px;
+        fill: black;
+      }
+    }
+    .header-mobile__brand {
+      display: flex;
+      justify-content: space-between;
+      .subtitle {
+        padding-top: 0.3em;
+      }
+    }
+  }
+}
